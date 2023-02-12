@@ -1,6 +1,8 @@
 <template>
-  <form id="search" class="search">Search <input v-model="searchQuery" name="query" /></form>
-  <Grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery" />
+  <div class="home">
+    <form id="search" class="search">Search <input v-model="searchQuery" name="query" /></form>
+    <Grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -18,7 +20,13 @@ const gridColumns = ['name', 'power']
 </script>
 
 <style lang="less" scoped>
-.search {
+
+.home{
+  padding: 10px;
+
+  .search {
   margin-bottom: 10px;
 }
+}
+
 </style>
