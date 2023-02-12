@@ -1,5 +1,6 @@
 import Layout from '@/layout/index.vue'
 import type { RouteRecordRaw } from 'vue-router'
+import Home from '@/views/home/index.vue'
 import Demo from '@/views/demo/index.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -7,19 +8,27 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'root',
     component: Layout,
-    redirect: 'Demo',
+    redirect: '/home',
     children: [
       {
+        path: 'home',
+        name: 'home',
+        component: Home,
+        meta: {
+          title: '主页1'
+        }
+      },
+      {
         path: 'demo',
-        name: 'Demo',
+        name: 'demo',
         component: Demo,
         meta: {
-          title: '主页'
+          title: '主页2'
         }
       },
       {
         path: 'tools',
-        name: 'Tools',
+        name: 'tools',
         component: () => import('@/views/tools/index.vue'),
         meta: {
           title: '工具'
@@ -27,7 +36,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'about',
-        name: 'About',
+        name: 'about',
         component: () => import('@/views/about/index.vue'),
         meta: {
           title: '关于',

@@ -1,0 +1,24 @@
+<template>
+  <form id="search" class="search">Search <input v-model="searchQuery" name="query" /></form>
+  <Grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery" />
+</template>
+
+<script setup lang="ts">
+import Grid from '@/study/components/GridComp.vue'
+import { ref } from 'vue'
+
+const searchQuery = ref('')
+const gridData = [
+  { name: 'Chuck Norris', power: Infinity },
+  { name: 'Bruce Lee', power: 9000 },
+  { name: 'Jackie Chan', power: 7000 },
+  { name: 'Jet Li', power: 8000 }
+]
+const gridColumns = ['name', 'power']
+</script>
+
+<style lang="scss" scoped>
+.search {
+  margin-bottom: 10px;
+}
+</style>

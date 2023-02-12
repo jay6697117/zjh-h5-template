@@ -13,7 +13,14 @@ const active = ref(0)
 const tabbarData = reactive([
   {
     icon: 'wap-home-o',
-    title: '主页',
+    title: '主页1',
+    to: {
+      name: 'Home'
+    }
+  },
+  {
+    icon: 'wap-home-o',
+    title: '主页2',
     to: {
       name: 'Demo'
     }

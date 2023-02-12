@@ -30,6 +30,8 @@ module.exports = {
         ignores: ["index"] // 需要忽略的组件名
       }
     ],
+    "vue/no-multiple-template-root": "off",
+    "vue/no-v-html":"off",
     "prettier/prettier": "off" // 关闭eslint-config-prettier
   },
   overrides: [

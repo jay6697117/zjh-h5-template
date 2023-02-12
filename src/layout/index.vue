@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import Tabbar from "@/components/Tabbar/index.vue";
+// import Tabbar from "@/components/Tabbar/index.vue"; //注释验证Tabbar是全局组件
 import { useCachedViewStoreHook } from '@/store/modules/cachedView'
 import { computed } from 'vue'
 
@@ -12,6 +12,7 @@ const cachedViews = computed(() => {
   <div class="app-wrapper">
     <div class="app-wrapper__content">
       <router-view v-slot="{ Component }">
+        <!-- <h1>Component:{{ JSON.stringify(Component) }}</h1> -->
         <keep-alive :include="cachedViews">
           <component :is="Component" />
         </keep-alive>
