@@ -20,37 +20,20 @@ const contentList = reactive([
 
 <template>
   <div class="demo-content">
-    <img
-      class="logo"
-      alt="Vue logo"
-      src="~@/assets/logo_vue3_ts.png"
-    >
+    <img class="logo" alt="Vue logo" src="~@/assets/logo_vue3_ts.png" />
     <div class="demo-content__title">
-      <a
-        href="https://github.com/yulimchen/vue3-h5-template"
-        target="_blank"
-      >
+      <a href="https://github.com/yulimchen/vue3-h5-template" target="_blank">
         <svg-icon name="github" />
         <h3>Vue3-h5-template</h3>
-        <svg-icon
-          class="link-icon"
-          name="github"
-        />
+        <svg-icon class="link-icon" name="github" />
       </a>
     </div>
     <div class="demo-content__desc">
-      <p>
-        🌱 基于 Vue3 全家桶、TypeScript、Vite 构建工具，开箱即用的 H5
-        移动端项目基础模板
-      </p>
+      <p>🌱 基于 Vue3 全家桶、TypeScript、Vite 构建工具，开箱即用的 H5 移动端项目基础模板</p>
     </div>
 
     <div class="demo-main">
-      <van-cell
-        v-for="(item, idx) in contentList"
-        :key="idx"
-        :title="item"
-      />
+      <van-cell v-for="(item, idx) in contentList" :key="idx" :title="item" />
     </div>
   </div>
 </template>
