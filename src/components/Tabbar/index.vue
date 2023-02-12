@@ -1,5 +1,10 @@
 <template>
-  <van-tabbar v-model="active" fixed :placeholder="true" :route="true">
+  <van-tabbar
+    v-model="active"
+    fixed
+    :placeholder="true"
+    :route="true"
+  >
     <van-tabbar-item
       v-for="(item, index) in tabbarData"
       :key="index"

@@ -28,8 +28,18 @@ const handleErrorReq = () => {
       <h3>Mock</h3>
     </div>
     <van-space>
-      <van-button type="success" @click="handleSuccessReq">成功请求</van-button>
-      <van-button type="danger" @click="handleErrorReq">失败请求</van-button>
+      <van-button
+        type="success"
+        @click="handleSuccessReq"
+      >
+        成功请求
+      </van-button>
+      <van-button
+        type="danger"
+        @click="handleErrorReq"
+      >
+        失败请求
+      </van-button>
     </van-space>
     <div class="tools-content__desc">
       <p>
