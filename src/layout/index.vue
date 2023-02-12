@@ -1,11 +1,11 @@
 <script setup lang="ts">
 // import Tabbar from "@/components/Tabbar/index.vue";
-import { useCachedViewStoreHook } from '@/store/modules/cachedView';
-import { computed } from 'vue';
+import { useCachedViewStoreHook } from '@/store/modules/cachedView'
+import { computed } from 'vue'
 
 const cachedViews = computed(() => {
-  return useCachedViewStoreHook().cachedViewList;
-});
+  return useCachedViewStoreHook().cachedViewList
+})
 </script>
 
 <template>

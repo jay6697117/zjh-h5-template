@@ -1,6 +1,6 @@
-import Layout from '@/layout/index.vue';
-import type { RouteRecordRaw } from 'vue-router';
-import Demo from '@/views/demo/index.vue';
+import Layout from '@/layout/index.vue'
+import type { RouteRecordRaw } from 'vue-router'
+import Demo from '@/views/demo/index.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -36,6 +36,6 @@ const routes: Array<RouteRecordRaw> = [
       }
     ]
   }
-];
+]
 
-export default routes;
+export default routes

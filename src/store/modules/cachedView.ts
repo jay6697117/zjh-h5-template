@@ -1,6 +1,6 @@
-import { defineStore } from 'pinia';
-import { store } from '@/store';
-import type { toRouteType } from '@/router';
+import { defineStore } from 'pinia'
+import { store } from '@/store'
+import type { toRouteType } from '@/router'
 
 export const useCachedViewStore = defineStore({
   id: 'cached-view',
@@ -11,21 +11,21 @@ export const useCachedViewStore = defineStore({
   actions: {
     addCachedView(view: toRouteType) {
       // 不重复添加
-      if (this.cachedViewList.includes(view.name as string)) return;
+      if (this.cachedViewList.includes(view.name as string)) return
       if (!view?.meta?.noCache) {
-        this.cachedViewList.push(view.name as string);
+        this.cachedViewList.push(view.name as string)
       }
     },
     delCachedView(view: toRouteType) {
-      const index = this.cachedViewList.indexOf(view.name as string);
-      index > -1 && this.cachedViewList.splice(index, 1);
+      const index = this.cachedViewList.indexOf(view.name as string)
+      index > -1 && this.cachedViewList.splice(index, 1)
     },
     delAllCachedViews() {
-      this.cachedViewList = [] as string[];
+      this.cachedViewList = [] as string[]
     }
   }
-});
+})
 
 export function useCachedViewStoreHook() {
-  return useCachedViewStore(store);
+  return useCachedViewStore(store)
 }

@@ -17,7 +17,9 @@
     "build-test": "run-p type-check build-only:test",
     "build-prod": "run-p type-check build-only:prod",
     "type-check": "vue-tsc --noEmit",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint:prettier": "prettier --write  \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "lint": "run-s lint:prettier lint:eslint"
   },
   "dependencies": {
     "axios": "^1.2.6",

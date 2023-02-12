@@ -1,5 +1,5 @@
 <script setup lang="ts" name="Demo">
-import { reactive } from 'vue';
+import { reactive } from 'vue'
 
 const contentList = reactive([
   '✔ ⚡ Vue3 + Vite4',
@@ -15,7 +15,7 @@ const contentList = reactive([
   '✔ ESLint',
   '✔ 首屏加载动画',
   '✔ 开发环境调试面板'
-]);
+])
 </script>
 
 <template>
