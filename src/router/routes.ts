@@ -39,8 +39,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'About',
         component: () => import('@/views/about/index.vue'),
         meta: {
-          title: '关于',
-          noCache: true
+          title: '关于'
         }
       },
       {
@@ -48,8 +47,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Test',
         component: () => import('@/study/components/TestComp.vue'),
         meta: {
-          title: '测试',
-          noCache: true
+          title: '测试'
         }
       }
     ]

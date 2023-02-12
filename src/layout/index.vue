@@ -2,18 +2,19 @@
 // import Tabbar from "@/components/Tabbar/index.vue"; //注释验证Tabbar是全局组件
 import { useCachedViewStoreHook } from '@/store/modules/cachedView'
 import { computed } from 'vue'
-const cachedViews = computed(() => {
+const cachedViewList = computed(() => {
   return useCachedViewStoreHook().cachedViewList
 })
 </script>
 <template>
   <div class="app-wrapper">
     <div class="app-wrapper__content">
+      <div>{{ cachedViewList }}</div>
       <router-view v-slot="{ Component, route }">
         <div>fullPath:{{ route.fullPath }}</div>
         <div>path:{{ route.path }}</div>
         <div>name:{{ route.name }}</div>
-        <keep-alive :include="cachedViews">
+        <keep-alive :include="cachedViewList">
           <component :is="Component" />
         </keep-alive>
       </router-view>

@@ -1,11 +1,4 @@
-<template>
-  <div class="home">
-    <form id="search" class="search">Search <input v-model="searchQuery" name="query" /></form>
-    <grid-comp :data="gridData" :columns="gridColumns" :filter-key="searchQuery" />
-  </div>
-</template>
-
-<script setup lang="ts">
+<script setup lang="ts" name="Home">
 import { ref } from 'vue'
 import GridComp from '@/study/components/GridComp.vue'
 
@@ -18,6 +11,13 @@ const gridData = [
 ]
 const gridColumns = ['name', 'power']
 </script>
+
+<template>
+  <div class="home">
+    <form id="search" class="search">Search <input v-model="searchQuery" name="query" /></form>
+    <grid-comp :data="gridData" :columns="gridColumns" :filter-key="searchQuery" />
+  </div>
+</template>
 
 <style lang="less" scoped>
 .home {

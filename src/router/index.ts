@@ -15,6 +15,7 @@ export interface toRouteType extends RouteLocationNormalized {
 }
 
 router.beforeEach((to: toRouteType, from, next) => {
+  console.log('to', to)
   // 路由缓存
   useCachedViewStoreHook().addCachedView(to)
   next()
