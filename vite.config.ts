@@ -1,26 +1,26 @@
-import { fileURLToPath, URL } from 'node:url';
-import { defineConfig, loadEnv } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import vueJsx from '@vitejs/plugin-vue-jsx';
-import Components from 'unplugin-vue-components/vite';
-import { VantResolver } from 'unplugin-vue-components/resolvers';
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
-import path from 'path';
-import mockDevServerPlugin from 'vite-plugin-mock-dev-server';
-import vueSetupExtend from 'vite-plugin-vue-setup-extend';
+import { fileURLToPath, URL } from 'node:url'
+import { defineConfig, loadEnv } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import Components from 'unplugin-vue-components/vite'
+import { VantResolver } from 'unplugin-vue-components/resolvers'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import path from 'path'
+import mockDevServerPlugin from 'vite-plugin-mock-dev-server'
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 // import viteCompression from "vite-plugin-compression";//gzip压缩:需要后端配合
-import { createHtmlPlugin } from 'vite-plugin-html';
+import { createHtmlPlugin } from 'vite-plugin-html'
 
 // 当前工作目录路径
-const root: string = process.cwd();
+const root: string = process.cwd()
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // 环境变量
-  const env = loadEnv(mode, root, '');
+  const env = loadEnv(mode, root, '')
 
   //当前环境
-  console.log('当前环境是:', env.VITE_NODE_ENV);
+  console.log('当前环境是:', env.VITE_NODE_ENV)
   //当前环境
 
   return {
@@ -31,13 +31,13 @@ export default defineConfig(({ mode }) => {
       mockDevServerPlugin(),
       // Vant4 组件自动按需引入
       Components({
+        // UI库解析器
+        resolvers: [VantResolver()],
         // 指定组件位置，默认是src/components
         dirs: ['src/components'],
         extensions: ['vue'],
         // 配置文件生成位置
-        dts: 'src/components.d.ts',
-        // ui库解析器
-        resolvers: [VantResolver()]
+        dts: 'src/components.d.ts'
       }),
       // svg icon
       createSvgIconsPlugin({
@@ -82,5 +82,5 @@ export default defineConfig(({ mode }) => {
         }
       }
     }
-  };
-});
+  }
+})

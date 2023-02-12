@@ -28,3 +28,4 @@ coverage
 *.sln
 *.sw?
 pnpm-lock.yaml
+src/components.d.ts
