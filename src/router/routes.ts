@@ -6,13 +6,13 @@ import Demo from '@/views/demo/index.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'root',
+    name: 'Root',
     component: Layout,
     redirect: '/home',
     children: [
       {
         path: 'home',
-        name: 'home',
+        name: 'Home',
         component: Home,
         meta: {
           title: '主页1'
@@ -20,7 +20,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'demo',
-        name: 'demo',
+        name: 'Demo',
         component: Demo,
         meta: {
           title: '主页2'
@@ -28,7 +28,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'tools',
-        name: 'tools',
+        name: 'Tools',
         component: () => import('@/views/tools/index.vue'),
         meta: {
           title: '工具'
@@ -36,7 +36,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'about',
-        name: 'about',
+        name: 'About',
         component: () => import('@/views/about/index.vue'),
         meta: {
           title: '关于',
