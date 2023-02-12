@@ -17,7 +17,7 @@ const gridData = [
 const gridColumns = ['name', 'power']
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .search {
   margin-bottom: 10px;
 }
