@@ -20,13 +20,11 @@ const gridColumns = ['name', 'power']
 </script>
 
 <style lang="less" scoped>
-
-.home{
+.home {
   padding: 10px;
 
   .search {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
+  }
 }
-}
-
 </style>
