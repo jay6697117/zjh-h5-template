@@ -19,8 +19,9 @@ export default defineConfig(({ mode }) => {
   // 环境变量
   const env = loadEnv(mode, root, "");
 
-  console.log("VITE_BASE_API:", env.VITE_BASE_API);
-  console.log("VITE_PUBLIC_PATH:", env.VITE_PUBLIC_PATH);
+  //当前环境
+  console.log("当前环境是:", env.VITE_NODE_ENV);
+  //当前环境
 
   return {
     base: env.VITE_PUBLIC_PATH || "/",

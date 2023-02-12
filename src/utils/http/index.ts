@@ -49,6 +49,7 @@ class Http {
       (response: AxiosResponse) => {
         NProgress.done();
         // 与后端协定的返回字段
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { code, message, result } = response.data;
         // 判断请求是否成功
         const isSuccess =
