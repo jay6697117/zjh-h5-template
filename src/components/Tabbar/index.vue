@@ -12,29 +12,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref, reactive } from 'vue';
 
 const active = ref(0);
 const tabbarData = reactive([
   {
-    icon: "wap-home-o",
-    title: "主页",
+    icon: 'wap-home-o',
+    title: '主页',
     to: {
-      name: "Demo"
+      name: 'Demo'
     }
   },
   {
-    icon: "gem-o",
-    title: "工具",
+    icon: 'gem-o',
+    title: '工具',
     to: {
-      name: "Tools"
+      name: 'Tools'
     }
   },
   {
-    icon: "user-o",
-    title: "关于",
+    icon: 'user-o',
+    title: '关于',
     to: {
-      name: "About"
+      name: 'About'
     }
   }
 ]);

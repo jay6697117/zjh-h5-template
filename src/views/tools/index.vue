@@ -1,14 +1,14 @@
 <script setup lang="ts" name="Tools">
-import { getListApi, getListApiError } from "@/api/mock";
-import { reactive } from "vue";
-import { showFailToast, showSuccessToast } from "vant";
-import "vant/es/toast/style";
+import { getListApi, getListApiError } from '@/api/mock';
+import { reactive } from 'vue';
+import { showFailToast, showSuccessToast } from 'vant';
+import 'vant/es/toast/style';
 
 const showList: string[] = reactive([]);
 
 const handleSuccessReq = async () => {
   const { list } = await getListApi();
-  showSuccessToast("请求成功");
+  showSuccessToast('请求成功');
   showList.push(...list);
 };
 const handleErrorReq = () => {
@@ -16,7 +16,7 @@ const handleErrorReq = () => {
     () => {},
     err => {
       console.log(err);
-      showFailToast("请求有误");
+      showFailToast('请求有误');
     }
   );
 };

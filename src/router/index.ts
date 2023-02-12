@@ -2,9 +2,9 @@ import {
   createRouter,
   createWebHashHistory,
   type RouteLocationNormalized
-} from "vue-router";
-import routes from "./routes";
-import { useCachedViewStoreHook } from "@/store/modules/cachedView";
+} from 'vue-router';
+import routes from './routes';
+import { useCachedViewStoreHook } from '@/store/modules/cachedView';
 
 const router = createRouter({
   history: createWebHashHistory(),

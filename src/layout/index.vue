@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // import Tabbar from "@/components/Tabbar/index.vue";
-import { useCachedViewStoreHook } from "@/store/modules/cachedView";
-import { computed } from "vue";
+import { useCachedViewStoreHook } from '@/store/modules/cachedView';
+import { computed } from 'vue';
 
 const cachedViews = computed(() => {
   return useCachedViewStoreHook().cachedViewList;
@@ -24,7 +24,7 @@ const cachedViews = computed(() => {
 </template>
 
 <style lang="less" scoped>
-@import "@/styles/mixin.less";
+@import '@/styles/mixin.less';
 
 .app-wrapper {
   .clearfix();
