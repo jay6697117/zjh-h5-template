@@ -11,7 +11,8 @@ export default defineMock([
       result: Mock.mock({
         'list|10': [
           {
-            'id|+1': 1
+            'id|+1': 1,
+            productImg:'https://image-ebs-tmp.yestae.com//goods/20191217/c5fee48c2a8eaf884a25d7336ffc4685.jpg'
           }
         ]
       })

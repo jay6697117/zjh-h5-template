@@ -47,8 +47,8 @@ class Http {
         NProgress.done()
         // 与后端协定的返回字段
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        // const { succeed, returnMsg, datas } = response.data
         const { code, message, result } = response.data
+        // const { succeed, returnMsg, datas } = response.data
         // console.log('response.data', response.data)
         // console.log('succeed', succeed)
         // console.log('returnMsg', returnMsg)
