@@ -17,10 +17,12 @@ const handleSuccessReq = async () => {
   try {
     const res = await getListApi()
     console.log('handleSuccessReq res:', res)
-    const { result: {list} } = res
+    const {
+      result: { list }
+    } = res
     console.log('handleSuccessReq list', list)
     showSuccessToast('请求成功')
-    showList.push(...list);
+    showList.push(...list)
 
     // const res = await getListLD2005()
     // console.log('handleSuccessReq res:', res)

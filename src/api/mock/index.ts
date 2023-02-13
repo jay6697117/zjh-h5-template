@@ -1,7 +1,7 @@
 import { http } from '@/utils/http'
 
 interface Result {
-  list:Array<any>
+  list: Array<any>
 }
 
 type ListResult = {
