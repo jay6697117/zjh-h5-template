@@ -46,15 +46,15 @@ const routes: Array<RouteRecordRaw> = [
           noCache: true
         }
       },
-      {
-        path: 'test',
-        name: 'Test',
-        component: () => import('@/study/components/TestComp.vue'),
-        meta: {
-          title: '测试',
-          noCache: true
-        }
-      }
+      // {
+      //   path: 'test',
+      //   name: 'Test',
+      //   component: () => import('@/study/components/TestComp.vue'),
+      //   meta: {
+      //     title: '测试',
+      //     noCache: true
+      //   }
+      // }
     ]
   }
 ]

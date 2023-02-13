@@ -6,7 +6,7 @@
         <th v-for="key in columns" :key="key" :class="{ active: sortKey == key }" @click="sortBy(key)">
           {{ capitalize(key) }}
           <!-- 这里主要是处理箭头逻辑 -->
-          <!-- <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'"> </span> -->
+          <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'"> </span>
         </th>
       </tr>
     </thead>
@@ -18,7 +18,6 @@
       </tr>
     </tbody>
   </table>
-  <p v-else>No matches found.</p>
 </template>
 
 <script setup>
