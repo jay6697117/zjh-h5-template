@@ -31,7 +31,7 @@ module.exports = {
         ignores: ["index"] // 需要忽略的组件名
       }
     ],
-    "vue/no-multiple-template-root": "warn", //最好有root element
+    "vue/no-multiple-template-root": "off", //最好有root element
     "vue/no-v-html": "warn", // 有xss风险需要注意
     "prettier/prettier": "off" // 关闭 eslint-config-prettier
   },

@@ -9,11 +9,9 @@ const cachedViewList = computed(() => {
 <template>
   <div class="app-wrapper">
     <div class="app-wrapper__content">
-      <div>{{ cachedViewList }}</div>
+      <!-- <div>{{ cachedViewList }}</div> -->
       <router-view v-slot="{ Component, route }">
         <div>fullPath:{{ route.fullPath }}</div>
-        <div>path:{{ route.path }}</div>
-        <div>name:{{ route.name }}</div>
         <keep-alive :include="cachedViewList">
           <component :is="Component" />
         </keep-alive>

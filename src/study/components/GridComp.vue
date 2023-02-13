@@ -1,10 +1,12 @@
 <template>
+  <div>{{ sortOrders }}</div>
   <table v-if="filteredData.length">
     <thead>
       <tr>
         <th v-for="key in columns" :key="key" :class="{ active: sortKey == key }" @click="sortBy(key)">
           {{ capitalize(key) }}
-          <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'"> </span>
+          <!-- 这里主要是处理箭头逻辑 -->
+          <!-- <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'"> </span> -->
         </th>
       </tr>
     </thead>
@@ -50,9 +52,6 @@ const props = defineProps({
 
 const sortKey = ref('')
 const sortOrders = ref(props.columns.reduce((o, key) => ((o[key] = 1), o), {}))
-const sortOrders1 = ref(props.columns)
-console.log('sortOrders :>> ', sortOrders.value)
-console.log('sortOrders1 :>> ', sortOrders1.value)
 
 const filteredData = computed(() => {
   let { data, filterKey } = props
@@ -67,6 +66,7 @@ const filteredData = computed(() => {
   const key = sortKey.value
   if (key) {
     const order = sortOrders.value[key]
+    //浅拷贝
     data = data.slice().sort((a, b) => {
       a = a[key]
       b = b[key]
@@ -77,6 +77,7 @@ const filteredData = computed(() => {
 })
 
 function sortBy(key) {
+  console.log('sortBy run:', key)
   sortKey.value = key
   sortOrders.value[key] *= -1
 }
