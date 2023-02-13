@@ -34,7 +34,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/tools/index.vue'),
         meta: {
           title: '工具',
-          noCache: true
+          noCache: false
         }
       },
       {
@@ -46,15 +46,6 @@ const routes: Array<RouteRecordRaw> = [
           noCache: true
         }
       }
-      // {
-      //   path: 'test',
-      //   name: 'Test',
-      //   component: () => import('@/study/components/TestComp.vue'),
-      //   meta: {
-      //     title: '测试',
-      //     noCache: true
-      //   }
-      // }
     ]
   }
 ]

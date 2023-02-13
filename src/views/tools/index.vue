@@ -1,5 +1,5 @@
 <script setup lang="ts" name="Tools">
-import { getListApi, getListApiError } from '@/api/mock'
+import { getListLD2005, getListApiError } from '@/api/mock'
 import { reactive } from 'vue'
 import { showFailToast, showSuccessToast } from 'vant'
 import 'vant/es/toast/style'
@@ -13,7 +13,7 @@ const showList: ShowList[] = reactive([])
 const handleSuccessReq = async () => {
   try {
     // const { list } = await getListApi()
-    const res = await getListApi()
+    const res = await getListLD2005()
     console.log('handleSuccessReq res:', res)
     const { datas: list } = res
     console.log('handleSuccessReq list', list)
