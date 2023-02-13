@@ -6,7 +6,7 @@ import Components from 'unplugin-vue-components/vite'
 import { VantResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
-// import mockDevServerPlugin from 'vite-plugin-mock-dev-server'
+import mockDevServerPlugin from 'vite-plugin-mock-dev-server'
 import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 // import viteCompression from "vite-plugin-compression";//gzip压缩:需要后端配合
 import { createHtmlPlugin } from 'vite-plugin-html'
@@ -28,7 +28,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       vue(),
       vueJsx(),
-      // mockDevServerPlugin(),
+      mockDevServerPlugin(),
       // Vant4 组件自动按需引入
       Components({
         // UI库解析器
@@ -70,9 +70,6 @@ export default defineConfig(({ mode }) => {
       proxy: {
         '^/mock-api': {
           target: ''
-          // target: 'https://api-test.yestae.com', // 测试环境
-          // changeOrigin: true,
-          // rewrite: path => path.replace(/^\/mock-api/, '')
         }
       }
     },
