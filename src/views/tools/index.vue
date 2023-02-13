@@ -13,9 +13,9 @@ const showList: ShowList[] = reactive([])
 const handleSuccessReq = async () => {
   try {
     // const { list } = await getListApi()
-    const res = await getListApi();
+    const res = await getListApi()
     console.log('handleSuccessReq res:', res)
-    const {datas:list} = res;
+    const { datas: list } = res
     console.log('handleSuccessReq list', list)
     showSuccessToast('请求成功')
     showList.push(...list)
@@ -44,8 +44,9 @@ const handleErrorReq = () => {
       <van-button type="danger" @click="handleErrorReq"> 失败请求 </van-button>
     </van-space>
     <div class="tools-content__desc">
-      <div v-for="item in showList" :key="item.activityId">
-        {{ item }}
+      <div v-for="item in showList" :key="item.goodsId" class="tools-content__desc__goods">
+        <span>{{ item.goodsName }}</span>
+        <img :src="item.productImg" width="100" alt="productImg" />
       </div>
     </div>
   </div>
@@ -71,9 +72,25 @@ const handleErrorReq = () => {
     border-radius: 4px;
     background-color: #eee;
     margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
 
-    p {
-      line-height: 24px;
+    &__goods {
+      margin-bottom: 20px;
+      width: 50%;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      img {
+        width: 80%;
+        height: 100%;
+      }
     }
   }
 }

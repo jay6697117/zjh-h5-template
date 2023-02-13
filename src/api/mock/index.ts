@@ -30,7 +30,7 @@ export function getListApiError(data?: object): Promise<ListResult> {
 
 export function getListApi(data?: object): Promise<ListResult1> {
   return http.request({
-    url: '/api/LD2005?activityId1=2e502295b31ad4fbf9d195064480a872',
+    url: '/api/LD2005?activityId=2e502295b31ad4fbf9d195064480a872',
     method: 'post',
     data
   })

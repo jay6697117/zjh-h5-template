@@ -47,12 +47,12 @@ class Http {
         NProgress.done()
         // 与后端协定的返回字段
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        // const { code, message, result } = response.data
         const { succeed, returnMsg, datas } = response.data
-        console.log('response.data', response.data)
-        console.log('succeed', succeed)
-        console.log('returnMsg', returnMsg)
-        console.log('datas', datas)
+        // const { code, message, result } = response.data
+        // console.log('response.data', response.data)
+        // console.log('succeed', succeed)
+        // console.log('returnMsg', returnMsg)
+        // console.log('datas', datas)
         // 判断请求是否成功
         const isSuccess = datas && Reflect.has(response.data, 'succeed') && succeed === ResultEnum.SUCCESS
         if (isSuccess) {
