@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, root, '')
 
   //当前环境
-  console.log('当前环境是:', env.VITE_NODE_ENV)
+  console.log('当前环境是:', env.VITE_NODE_ENV, '| baseUrl:', env.VITE_BASE_API)
   //当前环境
 
   return {
@@ -68,8 +68,10 @@ export default defineConfig(({ mode }) => {
       // 仅在 proxy 中配置的代理前缀， mock-dev-server 才会拦截并 mock
       // doc: https://github.com/pengzhanbo/vite-plugin-mock-dev-server
       proxy: {
-        '^/dev-api': {
+        '^/mock-api': {
           target: ''
+          // changeOrigin: true,
+          // rewrite: path => path.replace(/^\/mock-api/, '')
         }
       }
     },
