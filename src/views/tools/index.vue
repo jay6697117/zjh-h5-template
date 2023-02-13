@@ -13,12 +13,13 @@ const showList: any[] = reactive([])
 
 const handleSuccessReq = async () => {
   try {
-    const {result} = await getListApi()
-    console.log('res', result)
+    const res = await getListApi()
+    console.log('handleSuccessReq res:', res)
+    const { result: {list} } = res
+    console.log('handleSuccessReq list', list)
     showSuccessToast('请求成功')
-    const { list } = result
-    console.log('list', list)
-    showList.push(...list)
+    showList.push(...list);
+
     // const res = await getListLD2005()
     // console.log('handleSuccessReq res:', res)
     // const { datas: list } = res
@@ -51,7 +52,8 @@ const handleErrorReq = () => {
     </van-space>
     <div class="tools-content__desc">
       <div v-for="item in showList" :key="item.goodsId" class="tools-content__desc__goods">
-        <span>{{ item.goodsName }}</span>
+        <!-- <span>{{ item.goodsName }}</span> -->
+        <span>{{ item.id }}</span>
         <img :src="item.productImg" width="100" alt="productImg" />
       </div>
     </div>

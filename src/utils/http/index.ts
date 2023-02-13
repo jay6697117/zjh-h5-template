@@ -57,9 +57,7 @@ class Http {
         // const isSuccess = datas && Reflect.has(response.data, 'succeed') && succeed === ResultEnum.SUCCESS
         const isSuccess = result && Reflect.has(response.data, 'code') && code === ResultEnum.SUCCESS
         if (isSuccess) {
-          return response.data
-          // return Promise.resolve(response.data)
-          // return Promise.resolve(result)
+          return Promise.resolve(response.data)
         } else {
           // 处理请求错误
           showFailToast(response.data.message)

@@ -1,9 +1,13 @@
 import { http } from '@/utils/http'
 
+interface Result {
+  list:Array<any>
+}
+
 type ListResult = {
   code: number | boolean
   message: string
-  result: Array<any>
+  result: Result
 }
 
 type ListResultLD = {
