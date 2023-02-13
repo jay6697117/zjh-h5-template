@@ -1,9 +1,15 @@
 import { http } from '@/utils/http'
 
 type ListResult = {
-  code: number
+  code: number | boolean
   message: string
   list: Array<any>
+}
+
+type ListResult1 = {
+  succeed: number | boolean
+  returnMsg: string
+  datas: Array<any>
 }
 
 // export function getListApi(params?: object): Promise<ListResult> {
@@ -22,18 +28,18 @@ export function getListApiError(data?: object): Promise<ListResult> {
   })
 }
 
-export function getListApi(data?: object): Promise<ListResult> {
+export function getListApi(data?: object): Promise<ListResult1> {
   return http.request({
-    url: '/api/LD2005?activityId=2e502295b31ad4fbf9d195064480a872&sign=9d188b548d262f52e1ca403c02efca94',
+    url: '/api/LD2005?activityId1=2e502295b31ad4fbf9d195064480a872',
     method: 'post',
     data
   })
 }
 
-// export function getListApi(data?: object): Promise<ListResult> {
-//   return http.request({
-//     url: '/api/LD1001?activityId=2e502295b31ad4fbf9d195064480a872&sign=ddd7208700d78e673dbeff991b565367',
-//     method: 'post',
-//     data
-//   })
-// }
+export function getListApi1(data?: object): Promise<ListResult1> {
+  return http.request({
+    url: '/api/LD1001?activityId=2e502295b31ad4fbf9d195064480a872',
+    method: 'post',
+    data
+  })
+}

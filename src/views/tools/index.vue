@@ -4,15 +4,24 @@ import { reactive } from 'vue'
 import { showFailToast, showSuccessToast } from 'vant'
 import 'vant/es/toast/style'
 
-const showList: string[] = reactive([])
+interface ShowList {
+  [x: string]: any
+}
+
+const showList: ShowList[] = reactive([])
 
 const handleSuccessReq = async () => {
-  // const { list } = await getListApi()
-  const res = await getListApi()
-  console.log('handleSuccessReq res:', res)
-  const { list } = res
-  showSuccessToast('请求成功')
-  showList.push(...list)
+  try {
+    // const { list } = await getListApi()
+    const res = await getListApi();
+    console.log('handleSuccessReq res:', res)
+    const {datas:list} = res;
+    console.log('handleSuccessReq list', list)
+    showSuccessToast('请求成功')
+    showList.push(...list)
+  } catch (error) {
+    console.log('handleSuccessReq error', error)
+  }
 }
 const handleErrorReq = () => {
   getListApiError().then(
@@ -35,9 +44,9 @@ const handleErrorReq = () => {
       <van-button type="danger" @click="handleErrorReq"> 失败请求 </van-button>
     </van-space>
     <div class="tools-content__desc">
-      <p>
-        {{ showList }}
-      </p>
+      <div v-for="item in showList" :key="item.activityId">
+        {{ item }}
+      </div>
     </div>
   </div>
 </template>
