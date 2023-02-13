@@ -45,7 +45,7 @@ const routes: Array<RouteRecordRaw> = [
           title: '关于',
           noCache: true
         }
-      },
+      }
       // {
       //   path: 'test',
       //   name: 'Test',

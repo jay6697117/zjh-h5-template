@@ -1,5 +1,5 @@
-import { defineMock } from 'vite-plugin-mock-dev-server';
-import Mock from 'mockjs';
+import { defineMock } from 'vite-plugin-mock-dev-server'
+import Mock from 'mockjs'
 
 export default defineMock([
   {
@@ -26,4 +26,4 @@ export default defineMock([
       result: null
     }
   }
-]);
+])
