@@ -13,8 +13,11 @@ const showList: any[] = reactive([])
 
 const handleSuccessReq = async () => {
   try {
-    const { list } = await getListApi()
+    const {result} = await getListApi()
+    console.log('res', result)
     showSuccessToast('请求成功')
+    const { list } = result
+    console.log('list', list)
     showList.push(...list)
     // const res = await getListLD2005()
     // console.log('handleSuccessReq res:', res)

@@ -3,7 +3,7 @@ import { http } from '@/utils/http'
 type ListResult = {
   code: number | boolean
   message: string
-  list: Array<any>
+  result: Array<any>
 }
 
 type ListResultLD = {
