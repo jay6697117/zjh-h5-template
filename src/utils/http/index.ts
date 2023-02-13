@@ -7,9 +7,10 @@ import 'vant/es/toast/style'
 // 默认 axios 实例请求配置
 const configDefault = {
   headers: {
-    'Content-Type': ContentTypeEnum.FORM_URLENCODED
+    // 'Content-Type': ContentTypeEnum.FORM_URLENCODED
+    'Content-Type': ContentTypeEnum.JSON
   },
-  timeout: 0,
+  timeout: 15000,
   baseURL: import.meta.env.VITE_BASE_API,
   data: {}
 }
@@ -42,6 +43,7 @@ class Http {
   private httpInterceptorsResponse(): void {
     Http.axiosInstance.interceptors.response.use(
       (response: AxiosResponse) => {
+        console.log('响应:', response)
         NProgress.done()
         // 与后端协定的返回字段
         // eslint-disable-next-line @typescript-eslint/no-unused-vars

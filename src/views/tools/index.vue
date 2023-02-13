@@ -7,7 +7,10 @@ import 'vant/es/toast/style'
 const showList: string[] = reactive([])
 
 const handleSuccessReq = async () => {
-  const { list } = await getListApi()
+  // const { list } = await getListApi()
+  const res = await getListApi()
+  console.log('handleSuccessReq res:', res)
+  const { list } = res
   showSuccessToast('请求成功')
   showList.push(...list)
 }
