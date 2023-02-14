@@ -1,4 +1,6 @@
 <script setup>
+// 树状视图暂时跳过
+// https://cn.vuejs.org/examples/#tree
 import { ref, computed } from 'vue'
 
 const props = defineProps({

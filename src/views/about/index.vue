@@ -38,14 +38,12 @@ const treeData = ref({
 </template>
 
 <style lang="less" scoped>
-
-.about{
+.about {
   padding: 8px;
 
   .item {
-  cursor: pointer;
-  line-height: 1.5;
+    cursor: pointer;
+    line-height: 1.5;
+  }
 }
-}
-
 </style>
